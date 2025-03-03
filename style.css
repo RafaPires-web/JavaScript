@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", serif;
+    outline: none;
+}
+
+body {
+    background: #8A51FC;
+}
+
+main {
+    display: block;
+    background: #F4F4F4;
+    width: 375px;
+    margin: 0px auto 30px;
+    border-radius: 20px;
+    padding: 44px 24px 23px;
+
+}
+
+select {
+    display: block;
+}
+
+button {
+
+    width: 327px;
+    height: 48px;
+    border-radius: 5px;
+    background: #772fd3;
+    color: white;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 18px;
+    margin: 23px auto;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+button:active {
+    opacity: 0.6;
+}
+
+
+select,
+input {
+    height: 48px;
+    width: 100%;
+    border-radius: 4px;
+    background-color: #ffffff;
+    margin-bottom: 24px;
+    appearance: none;
+    padding-left: 18px;
+    font-weight: 700;
+    font-size: 16px;
+    color: #777777;
+    cursor: pointer;
+
+}
+
+#Logo {
+    height: 300px;
+    width: 300px;
+    margin: 20px auto;
+    display: block;
+}
+
+label {
+    color: #777777;
+    font-weight: 400;
+    font-size: 14px;
+
+}
+section{
+    margin-top: 23px;
+    border-radius: 20px;
+    border: 1px solid #772fd3;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.Seta{
+    margin: 15px 0;
+}
+.Caixa-Moeda{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px ;
+}
+.Moeda{
+font-size: 14px;
+line-height: 18px;
+color:#777777
+}
+.ValorConvertido, .ValorConverter{  
+color: #555555;
+font-weight: 700;
+font-size: 20px;
+}
