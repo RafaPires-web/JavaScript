@@ -9,7 +9,7 @@ function Convertendo() {
 
     const ValorDolar = 5.8
     const ValorEuro = 6.1
-
+    const ValorLibra = 7.4
     if (Alteraçao.value == 'Dolar') {
         ValordoOutros.innerHTML = new Intl.NumberFormat("en-US", {
             style: "currency",
@@ -22,7 +22,14 @@ function Convertendo() {
             currency: "EUR"
         }).format(InputValor / ValorEuro)
     }
+    if (Alteraçao.value == 'Libra') {
+        ValordoOutros.innerHTML = new Intl.NumberFormat("en-UK", {
+            style: "currency",
+            currency: "GBP"
+        }).format(InputValor / ValorLibra)
 
+
+    }
     const ValordoReal = document.querySelector(".ValorConverter") // Valor real
 
     ValordoReal.innerHTML = new Intl.NumberFormat("pt-BR", {
@@ -44,6 +51,11 @@ function TrocaSeletor() {
         Bandeira.innerHTML = "Euro"
         imagemMoeda.src = 'assets/Euro.png'
 
+    }
+
+    if (Alteraçao.value == "Libra") {
+        Bandeira.innerHTML = "Libra"
+        imagemMoeda.src = "assets/libra 1.png"
     }
     Convertendo()
 }
