@@ -1,7 +1,8 @@
-const Convertbutton = document.querySelector("#Conversor")
-const Alteraçao = document.querySelector(".Seletor2")
+const Convertbutton = document.querySelector("#Conversor") // Botao
+const Alteraçao = document.querySelector(".Seletor2") // Segundo Seletor
 const ValordoOutros = document.querySelector(".ValorConvertido") // Valor Da Conversao
-
+const primeiro = document.querySelector(".Seletor1")
+const pvalor = document.querySelector('.ValorConverter')
 
 
 function Convertendo() {
@@ -10,6 +11,8 @@ function Convertendo() {
     const ValorDolar = 5.8
     const ValorEuro = 6.1
     const ValorLibra = 7.4
+    const ValorBrasil = 5.3
+
     if (Alteraçao.value == 'Dolar') {
         ValordoOutros.innerHTML = new Intl.NumberFormat("en-US", {
             style: "currency",
@@ -30,6 +33,8 @@ function Convertendo() {
 
 
     }
+
+    
     const ValordoReal = document.querySelector(".ValorConverter") // Valor real
 
     ValordoReal.innerHTML = new Intl.NumberFormat("pt-BR", {
@@ -60,6 +65,50 @@ function TrocaSeletor() {
     Convertendo()
 }
 
+function converter() {
+
+    const bandeiraCima = document.getElementById("ValorBr")
+    const Texto = document.getElementById("P1")
+
+    if (primeiro.value == "Dolinho") {
+        bandeiraCima.src = 'assets/Dolar.png'
+        Texto.innerHTML = "Dolar"
+
+    }
+    if (primeiro.value == "Real") {
+        bandeiraCima.src = "assets/Real.png"
+        Texto.innerHTML = "Reais"
+
+    }
+
+}
+
+function eli(){
+    const InputValor = document.querySelector(".Input-Resultado").value
+
+    const ValorDolar = 5.8
+    const ValorEuro = 6.1
+    const ValorLibra = 7.4
+    const ValorBrasil = 5.3
+    
+    if (primeiro.value == "Dolinho"){
+        pvalor.innerHTML = new Intl.NumberFormat("en-US", {
+            style: "currency",
+            currency: "USD"
+        }).format(InputValor / ValorLibra)
+
+    }
+    
+    if (Alteraçao.value == 'Libra') {
+        ValordoOutros.innerHTML = new Intl.NumberFormat("en-UK", {
+            style: "currency",
+            currency: "GBP"
+        }).format()
+
+
+    }
+}
+primeiro.addEventListener('change', converter)
 Alteraçao.addEventListener('change', TrocaSeletor)
 Convertbutton.addEventListener("click", Convertendo)
 

@@ -15,18 +15,20 @@
         <main>
             <nav>
             <label>Converter <b>De</b>
-                <select class="Seletor">
+                <select class="Seletor1">
 
                     
-                    <option>R$ Real Brasileiro</option>
+                    <option value="Real">R$ Real Brasileiro</option>
+                    <option value="Dolinho">US$ Dolar Americano</option>
                 </select>
             </label>
             <label>Converter <b>Para</b>
                 <select class="Seletor2">
-                    
+                    <option > Selecione</option>
                     <option value="Dolar">US$ Dolar Americano</option>
                     <option value="Euro">€ Euro</option>
                     <option value="Libra">£ Libra</option>
+                    
                 </select>
             </label>
             <label>Valor
@@ -38,8 +40,8 @@
     </nav>
 <section>
 <div class="Caixa-Moeda">
-    <img src="assets/Real.png" alt="Moeda-Brasil">
-    <p class="Moeda">Real</p>
+    <img src="assets/Real.png" alt="Moeda-Brasil" id="ValorBr">
+    <p class="Moeda" id="P1">Real</p>
     <p class="ValorConverter">R$ 0,00 </p>
 </div>
 
