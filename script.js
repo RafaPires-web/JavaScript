@@ -7,8 +7,8 @@ const ValordoOutros = document.querySelector(".ValorConvertido") // Valor Da Con
 function Convertendo() {
     const InputValor = document.querySelector(".Input-Resultado").value
 
-    const ValorDolar = 5.8
-    const ValorEuro = 6.1
+    const ValorDolar = 5.7
+    const ValorEuro = 6.2
     const ValorLibra = 7.4
     if (Alteraçao.value == 'Dolar') {
         ValordoOutros.innerHTML = new Intl.NumberFormat("en-US", {
