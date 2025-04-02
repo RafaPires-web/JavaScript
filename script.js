@@ -6,35 +6,54 @@ const pvalor = document.querySelector('.ValorConverter')
 
 
 function Convertendo() {
-    const InputValor = document.querySelector(".Input-Resultado").value
+    const InputValor = parseFloat(document.querySelector(".Input-Resultado").value);
 
-    const ValorDolar = 5.8
-    const ValorEuro = 6.1
-    const ValorLibra = 7.4
-    const ValorBrasil = 5.3
+    
+    const ValorDolar = 5.8;
+    const ValorEuro = 6.1;
+    const ValorLibra = 7.4;
+    const ValorBrasil = 5.3;
+    const taxaDolarParaEuro = 0.92; 
+    const taxaDolarParaLibra = 0.77;
 
-    if (Alteraçao.value == 'Dolar') {
-        ValordoOutros.innerHTML = new Intl.NumberFormat("en-US", {
-            style: "currency",
-            currency: "USD"
-        }).format(InputValor / ValorDolar)
+    let valorConvertido = 0;
+    let moedaDestino = "";
+
+    
+    if (primeiro.value == 'Real' && Alteraçao.value == 'Dolar') {
+        valorConvertido = InputValor / ValorDolar;
+        moedaDestino = "USD";
     }
-    if (Alteraçao.value == 'Euro') {
-        ValordoOutros.innerHTML = new Intl.NumberFormat("de-DE", {
-            style: "currency",
-            currency: "EUR"
-        }).format(InputValor / ValorEuro)
+    if (primeiro.value == 'Real' && Alteraçao.value == 'Euro') {
+        valorConvertido = InputValor / ValorEuro;
+        moedaDestino = "EUR";
     }
-    if (Alteraçao.value == 'Libra') {
-        ValordoOutros.innerHTML = new Intl.NumberFormat("en-UK", {
-            style: "currency",
-            currency: "GBP"
-        }).format(InputValor / ValorLibra)
-
-
+    if (primeiro.value == 'Real' && Alteraçao.value == 'Libra') {
+        valorConvertido = InputValor / ValorLibra;
+        moedaDestino = "GBP";
     }
 
     
+    if (primeiro.value == 'Dolinho' && Alteraçao.value == 'Euro') {
+        valorConvertido = InputValor * taxaDolarParaEuro;
+        moedaDestino = "EUR";
+    }
+
+    if (primeiro.value == 'Dolinho' && Alteraçao.value == 'Libra') {
+        valorConvertido = InputValor * taxaDolarParaLibra;
+        moedaDestino = "GBP";
+    }
+    
+   
+    if (valorConvertido > 0) {
+        ValordoOutros.innerHTML = new Intl.NumberFormat("en-US", {
+            style: "currency",
+            currency: moedaDestino
+        }).format(valorConvertido);
+    } 
+
+
+
     const ValordoReal = document.querySelector(".ValorConverter") // Valor real
 
     ValordoReal.innerHTML = new Intl.NumberFormat("pt-BR", {
@@ -83,22 +102,22 @@ function converter() {
 
 }
 
-function eli(){
+function eli() {
     const InputValor = document.querySelector(".Input-Resultado").value
 
     const ValorDolar = 5.8
     const ValorEuro = 6.1
     const ValorLibra = 7.4
     const ValorBrasil = 5.3
-    
-    if (primeiro.value == "Dolinho"){
+
+    if (primeiro.value == "Dolinho") {
         pvalor.innerHTML = new Intl.NumberFormat("en-US", {
             style: "currency",
             currency: "USD"
         }).format(InputValor / ValorLibra)
 
     }
-    
+
     if (Alteraçao.value == 'Libra') {
         ValordoOutros.innerHTML = new Intl.NumberFormat("en-UK", {
             style: "currency",
