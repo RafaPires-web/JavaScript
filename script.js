@@ -102,31 +102,6 @@ function converter() {
 
 }
 
-function eli() {
-    const InputValor = document.querySelector(".Input-Resultado").value
-
-    const ValorDolar = 5.8
-    const ValorEuro = 6.1
-    const ValorLibra = 7.4
-    const ValorBrasil = 5.3
-
-    if (primeiro.value == "Dolinho") {
-        pvalor.innerHTML = new Intl.NumberFormat("en-US", {
-            style: "currency",
-            currency: "USD"
-        }).format(InputValor / ValorLibra)
-
-    }
-
-    if (Alteraçao.value == 'Libra') {
-        ValordoOutros.innerHTML = new Intl.NumberFormat("en-UK", {
-            style: "currency",
-            currency: "GBP"
-        }).format()
-
-
-    }
-}
 primeiro.addEventListener('change', converter)
 Alteraçao.addEventListener('change', TrocaSeletor)
 Convertbutton.addEventListener("click", Convertendo)
